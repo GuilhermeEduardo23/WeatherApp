@@ -21,7 +21,7 @@ export default function Search({getCity}: {getCity: (city: string) => void}) {
 
   return (
     <div className={styles.container}>
-      <h1>{isNaN(data.temp) ? "" : `${Math.round(data?.temp)}ºC`}</h1>
+      <h1>{data && !isNaN(data.temp) ? `${Math.round(data.temp)}ºC` : ""}</h1>
 
       <div className={styles.search}>
         <input
