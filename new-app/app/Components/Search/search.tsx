@@ -1,40 +1,49 @@
 "use client";
-import { useEffect, useState } from "react";
-//import styles from "./search.module.scss";
+import { useState } from "react";
+import styles from "./search.module.scss";
 import { CiSearch } from "react-icons/ci";
 import axios from "axios";
+import IWeather from "@/app/Types/IWeather";
 
-export default function Search() {
-    const [city, setCity] = useState<string>('');
+export default function Search({getCity}: {getCity: (city: string) => void}) {
+  const [data, setData] = useState<IWeather>();
+  const[city, setCity] = useState<string>("");
 
-    useEffect(() => {
-        async function getCity() {
-            if(city) {
-                const api: string = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pt_br&appid=faf304ef7610279db0789696dbc57421`;
-        
-                await axios.get(api).then((response) => console.log(response.data));
-            }
-        }
-        getCity();
-    }, [city]);
-    
-    async function handleCity(e: React.FormEvent<HTMLFormElement>) {
-        e.preventDefault();
-    }
+  async function handleCity() {
+    console.log(city);
+    const api: string = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=pt_br&appid=faf304ef7610279db0789696dbc57421&units=metric`;
 
-    return (
-        <form onSubmit={(e) => handleCity(e)}>
-            <label>
-                <input 
-                    type="text" 
-                    id="city" 
-                    placeholder="Pesquise a cidade" 
-                    onChange={(e) => setCity(e.target.value)}
-                    value={city}
-                />
-                <CiSearch />
-            </label>
-            <button type="submit">Pesquisar</button>
-        </form>
-    )
+    await axios.get(api).then((response) => {
+      setData(response.data.main);
+      getCity(response.data.name);
+    });
+  }
+
+  return (
+    <div className={styles.container}>
+      <h1>{isNaN(data.temp) ? "" : `${Math.round(data?.temp)}ºC`}</h1>
+
+      <div className={styles.search}>
+        <input
+          className={styles.search_input}
+          type="text"
+          placeholder="Pesquise a cidade"
+          onChange={(e) => (
+            setCity(e.target.value)
+          )}
+          value={city}
+        />
+
+        {city && (
+          <button
+            className={styles.search_button}
+            onClick={handleCity}
+            title="Search"
+          >
+            <CiSearch />
+          </button>
+        )}
+      </div>
+    </div>
+  );
 }
