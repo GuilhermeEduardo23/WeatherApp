@@ -23,6 +23,13 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    
+    p {
+      font-size: 1.5rem;
+    }
 
+    .description {
+      text-transform: capitalize;
+    }
   }
 }

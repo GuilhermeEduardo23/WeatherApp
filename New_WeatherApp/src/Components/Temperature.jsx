@@ -1,14 +1,12 @@
-import windy from "../assets/windy.png";
-
-const Temperature = ({nameCity, weatherData, loading, error}) => {
+const Temperature = ({ nameCity, descriptionWeather, weatherData }) => {
   return (
     <div className="temperature">
-        <span>{nameCity}</span>
-        <img src={windy} alt="" />
-        <span>14º</span>
-        <h1>So, it's Windy.</h1>
+      <span>{nameCity}</span>
+      <img src={descriptionWeather.icon} alt={descriptionWeather.main} />
+      <p>{Math.floor(weatherData)}ºC</p>
+      <p className="description">{descriptionWeather.description}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Temperature
+export default Temperature;
