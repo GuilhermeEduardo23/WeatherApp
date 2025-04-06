@@ -1,11 +1,11 @@
-import './App.css'
+import "./App.scss";
 
 function App() {
   return (
     <>
-      <h1>Previsão do Tempo</h1>
+      <h1 className="title">Previsão do Tempo ☀️</h1>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
