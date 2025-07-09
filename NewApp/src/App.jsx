@@ -2,7 +2,7 @@
 import "./App.scss";
 
 // Components
-import CitySearchBar from "./components/Header/CitySearchBar";
+import CitySearchBar from "./components/SearchBar/CitySearchBar";
 
 function App() {
   return (

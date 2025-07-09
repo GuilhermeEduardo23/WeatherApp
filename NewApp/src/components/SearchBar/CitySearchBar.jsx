@@ -1,5 +1,5 @@
 // Style
-import "../Header/CitySearchBar.scss";
+import "./CitySearchBar.scss";
 
 // Icon
 import { IoIosSearch } from "react-icons/io";
