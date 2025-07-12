@@ -7,6 +7,12 @@
 
 body {
   background: #0f172a;
-  color: #fff;
+  min-height: 100vh;
+  padding: 16px;
+  color: #f8fafc;
 }
 
+.container {
+  max-width: 448px;
+  margin: 0 auto;
+}
