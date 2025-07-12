@@ -6,6 +6,7 @@ import CitySearchBar from "./components/SearchBar/CitySearchBar";
 import WeatherCard from "./components/WeatherCard/WeatherCard";
 import Header from "./components/Header/Header";
 import HourlyForecast from "./components/HourlyForecast/HourlyForecast";
+import DailyForecast from "./components/DailyForecast/DailyForecast";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <CitySearchBar />
       <WeatherCard />
       <HourlyForecast />
+      <DailyForecast />
     </div>
   )
 }
