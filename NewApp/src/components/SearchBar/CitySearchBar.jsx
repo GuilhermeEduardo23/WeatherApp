@@ -13,7 +13,7 @@ const CitySearchBar = () => {
         placeholder="Buscar cidade..."
       />
       <button className="searchButton">
-        <IoIosSearch />
+        <IoIosSearch className="searchIcon"/>
       </button>
     </form>
   );

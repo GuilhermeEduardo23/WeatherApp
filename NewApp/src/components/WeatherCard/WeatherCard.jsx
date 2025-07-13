@@ -1,5 +1,7 @@
 import "./WeatherCard.scss";
 
+import { IoSunnyOutline } from "react-icons/io5";
+
 const WeatherCard = () => {
   return (
     <div className="weatherCard">
@@ -15,16 +17,16 @@ const WeatherCard = () => {
       </div>
       <div className="details">
         <div className="condition">
-            <p className="description">Ensolarado</p>
-            <div className="stats">
-                <div className="stat">
-                    <svg></svg>
-                    <span>10%</span>
-                </div>
+          <p className="description">Ensolarado</p>
+          <div className="stats">
+            <div className="stat">
+              <IoSunnyOutline className="statIcon" />
+              <span>10%</span>
             </div>
+          </div>
         </div>
         <div className="weatherIcon">
-            <svg></svg>
+          <IoSunnyOutline />
         </div>
       </div>
     </div>

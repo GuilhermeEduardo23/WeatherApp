@@ -1,0 +1,91 @@
+.weatherCard {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 24px;
+    color: #f8fafc;
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 24px;
+
+        .location {
+            flex: 1;
+
+            .city {
+                font-size: 24px;
+                font-weight: 600;
+                line-height: 1.25;
+                margin-bottom: 4px;
+            }
+
+            .date {
+                font-size: 14px;
+                font-weight: 400;
+                opacity: 0.9;
+            }
+        }
+
+        .temperature {
+            text-align: right;
+
+            .currentTemperature {
+                font-size: 36px;
+                font-weight: 700;
+                line-height: 1.25;
+                margin-bottom: 4px;
+            }
+
+            .feelsLike {
+                font-size: 14px;
+                font-weight: 400;
+                opacity: 0.9;
+            }
+        }
+    }
+
+    .details {
+        border: 1px solid red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .condition {
+            flex: 1;
+
+            .description {
+                font-size: 18px;
+                font-weight: 500;
+                margin-bottom: 8px;
+            }
+
+            .stats {
+                display: flex;
+                gap: 16px;
+
+                .stat {
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    font-weight: 400;
+
+                    .statIcon {
+                        width: 20px;
+                        height: 20px;
+                        margin-right: 4px;
+                    }
+                }
+            }
+        }
+
+        .weatherIcon {
+            width: 80px;
+            height: 80px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+    }
+}
