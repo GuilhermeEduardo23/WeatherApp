@@ -14,13 +14,14 @@
     font-weight: 400;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: 0.3s ease;
+    outline: none;
 
     &::placeholder {
       color: #94a3b8;
     }
 
     &:focus {
-      border-color: #6366f1;
+      border: 1px solid #6366f1;
       box-shadow:
         0 10px 20px rgba(0, 0, 0, 0.2),
         0 0 0 3px rgba(99, 102, 241, 0.1);
@@ -35,7 +36,7 @@
     background: none;
     border: none;
     color: #94a3b8;
-    transition: .15s ease;
+    transition: 0.15s ease;
     padding: 10px;
 
     &:hover {

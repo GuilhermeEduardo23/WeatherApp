@@ -27,6 +27,7 @@
                 font-size: 14px;
                 font-weight: 400;
                 opacity: 0.9;
+                line-height: 1.5;
             }
         }
 
@@ -49,7 +50,6 @@
     }
 
     .details {
-        border: 1px solid red;
         display: flex;
         justify-content: space-between;
         align-items: center;

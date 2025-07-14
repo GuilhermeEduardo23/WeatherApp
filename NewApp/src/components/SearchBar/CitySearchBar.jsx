@@ -12,8 +12,8 @@ const CitySearchBar = () => {
         type="text"
         placeholder="Buscar cidade..."
       />
-      <button className="searchButton">
-        <IoIosSearch className="searchIcon"/>
+      <button className="searchButton" onClick={(e) => e.preventDefault()}>
+        <IoIosSearch className="searchIcon" />
       </button>
     </form>
   );
