@@ -2,13 +2,13 @@ import "./WeatherCard.scss";
 
 import { IoSunnyOutline } from "react-icons/io5";
 
-const WeatherCard = () => {
+const WeatherCard = ({ weather }) => {
   return (
     <div className="weatherCard">
       <div className="header">
         <div className="location">
-          <h2 className="city">São Paulo</h2>
-          <p className="date">Domingo, 13 de julho de 2025.</p>
+          <h2 className="city">{weather.name}</h2>
+          <p className="date">{Date.now()}</p>
         </div>
         <div className="temperature">
           <p className="currentTemperature">27º</p>

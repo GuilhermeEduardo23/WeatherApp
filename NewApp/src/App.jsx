@@ -12,16 +12,20 @@ import useCurrentWeatherData from "./hooks/useFetch";
 
 function App() {
   const [city, setCity] = useState("");
-  console.log(city);
-  const { currentWeatherData } = useCurrentWeatherData(city);
+  const { currentWeatherData, loading, error } = useCurrentWeatherData(city);
+  console.log(currentWeatherData);
 
   return (
     <div className="container">
       <Header />
       <CitySearchBar onCitySubmit={setCity} />
-      <WeatherCard />
-      <HourlyForecast />
-      <DailyForecast />
+      {currentWeatherData && (
+        <div>
+          <WeatherCard weather={currentWeatherData} />
+          <HourlyForecast weather={currentWeatherData} />
+          <DailyForecast weather={currentWeatherData} />
+        </div>
+      )}
     </div>
   );
 }
