@@ -12,7 +12,7 @@ const useCurrentWeatherData = (city) => {
 
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myKeyApi}&lang=pt_br`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myKeyApi}&lang=pt&units=metric`
       )
       .then((response) => setCurrentWeatherData(response.data))
       .catch((err) => setError(err));
