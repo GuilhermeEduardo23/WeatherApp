@@ -8,32 +8,29 @@ import Header from "./components/Header/Header";
 import HourlyForecast from "./components/HourlyForecast/HourlyForecast";
 import DailyForecast from "./components/DailyForecast/DailyForecast";
 import { useState } from "react";
-import useCurrentWeatherData from "./hooks/useFetch";
+import usedata from "./hooks/useFetch";
 import ModalError from "./components/ModalError/ModalError";
 
 function App() {
   const [city, setCity] = useState("");
-  const { currentWeatherData, loading, error } = useCurrentWeatherData(city);
-  
-  const [showErrorModal, setShowErrorModal] = useState(false);
-  const [modalErrorIsOpen, setModalErrorIsOpen] = useState(false);
-
-  function handleCloseModalError() {
-    setShowErrorModal(false);
-  }
+  const { data, loading, error } = usedata(city);
 
   return (
     <div>
       <Header />
       <CitySearchBar onCitySubmit={setCity} />
 
-      {error && <ModalError city={city} onClose={handleCloseModalError} isOpen={showErrorModal}/>}
+      {error && (
+        <ModalError
+          city={city}
+        />
+      )}
 
-      {currentWeatherData && (
+      {data && (
         <div>
-          <WeatherCard weather={currentWeatherData} />
-          <HourlyForecast weather={currentWeatherData} />
-          <DailyForecast weather={currentWeatherData} />
+          <WeatherCard weather={data} />
+          <HourlyForecast weather={data} />
+          <DailyForecast weather={data} />
         </div>
       )}
     </div>

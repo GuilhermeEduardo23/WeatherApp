@@ -1,8 +1,11 @@
 import "./ModalError.scss";
+import { useState } from "react";
 
-const ModalError = ({ city, onClose, isOpen }) => {
+const ModalError = ({ city }) => {
+  const [closeModal, setCloseModal] = useState(false);
+
   return (
-    <div id="errorModal" className={`modalOverlay ${!isOpen ? " hidden" : ""}`}>
+    <div id="errorModal" className={`${!closeModal ? "modalOverlay" : "hidden"}`}>
       <div className="modalContent">
         <div className="modalHeader">
           <div className="errorIcon">
@@ -21,7 +24,8 @@ const ModalError = ({ city, onClose, isOpen }) => {
             </svg>
           </div>
           <h2 className="modalTitle">Cidade não encontrada</h2>
-          <button onClick={onClose} className="closeButton">
+          <button className="closeButton"
+          onClick={() => setCloseModal(true)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -54,9 +58,7 @@ const ModalError = ({ city, onClose, isOpen }) => {
           </div>
 
           <div className="modalFooter">
-            <button className="tryAgainButton" onClick={onClose}>
-              Tentar novamente
-            </button>
+            <button className="tryAgainButton" onClick={() => setCloseModal(true)}>Tentar novamente</button>
           </div>
         </div>
       </div>

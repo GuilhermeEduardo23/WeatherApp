@@ -2,17 +2,19 @@
 import "./CitySearchBar.scss";
 
 // Hooks
-import { useRef } from "react";
+import { useState } from "react";
 
 // Icon
 import { IoIosSearch } from "react-icons/io";
 
 const CitySearchBar = ({ onCitySubmit }) => {
-  const inputRef = useRef();
+  const [search, setSearch] = useState("");
 
   const handleCity = () => {
-    if (onCitySubmit && inputRef.current.value)
-      onCitySubmit(inputRef.current.value);
+    if (onCitySubmit && search) {
+      onCitySubmit(search);
+      setSearch("");
+    }
   };
 
   return (
@@ -21,10 +23,11 @@ const CitySearchBar = ({ onCitySubmit }) => {
         className="searchInput"
         type="text"
         placeholder="Buscar cidade..."
-        ref={inputRef}
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
       />
       <button className="searchButton">
-        <IoIosSearch className="searchIcon" onClick={handleCity}/>
+        <IoIosSearch className="searchIcon" onClick={handleCity} />
       </button>
     </div>
   );
