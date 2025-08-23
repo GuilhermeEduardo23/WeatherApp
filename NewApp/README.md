@@ -1,4 +1,4 @@
-# Previsão do Tempo ![Ilustração de aplicação de previsão do tempo](https://cdn-icons-png.flaticon.com/512/4804/4804190.png)
+# Previsão do Tempo
 
 ## Descrição (Português)
 
