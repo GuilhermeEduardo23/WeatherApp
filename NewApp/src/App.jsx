@@ -10,20 +10,26 @@ import DailyForecast from "./components/DailyForecast/DailyForecast";
 import { useState } from "react";
 import usedata from "./hooks/useFetch";
 import ModalError from "./components/ModalError/ModalError";
+import { OrbitProgress } from "react-loading-indicators";
 
 function App() {
   const [city, setCity] = useState("");
   const { data, loading, error } = usedata(city);
 
   return (
-    <div>
+    <div className="app">
       <Header />
       <CitySearchBar onCitySubmit={setCity} />
 
-      {error && (
-        <ModalError
-          city={city}
-        />
+      {error && <ModalError city={city} />}
+
+      {loading && (
+        <div className="loading">
+          <OrbitProgress
+            color="#ffffffff"
+            size="medium"
+          />
+        </div>
       )}
 
       {data && (

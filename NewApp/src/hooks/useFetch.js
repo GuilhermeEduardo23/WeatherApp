@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 const useCurrentWeatherData = (city) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const myKeyApi = "faf304ef7610279db0789696dbc57421";
 
   useEffect(() => {
     if (!city) return;
-    setLoading(true);
     setError("");
     setData(null);
+    setLoading(true);
 
     async function fetchData() {
       try {
