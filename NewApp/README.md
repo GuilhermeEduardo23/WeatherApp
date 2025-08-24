@@ -1,14 +1,12 @@
-# Previsão do Tempo
+# Meu Tempo ![Sol entre nuvens](https://img.icons8.com/?size=50&id=TquwKm18epOW&format=png&color=000000)
 
 ## Descrição (Português)
 
-Este projeto é uma aplicação web para consulta de previsão do tempo em qualquer cidade do mundo. O usuário pode pesquisar pelo nome da cidade e visualizar os dados meteorológicos atuais, a previsão para as próximas horas e para os próximos dias, apresentados em cartões interativos e responsivos. A interface é moderna, intuitiva e otimizada para dispositivos móveis.
+Este projeto é uma aplicação web para consulta de previsão do tempo em qualquer cidade do mundo. O usuário pode pesquisar pelo nome da cidade e visualizar os dados meteorológicos atuais. A interface é moderna, intuitiva e otimizada para dispositivos móveis.
 
 ### Funcionalidades
 - Busca de cidades para consulta do clima.
-- Exibição dos dados meteorológicos atuais (temperatura, sensação térmica, descrição do tempo, ícone).
-- Previsão detalhada para as próximas horas.
-- Previsão diária para os próximos dias.
+- Exibição dos dados meteorológicos atuais (temperatura, sensação térmica, descrição do tempo, ícone        indicativo do tempo atual).
 - Mensagens de erro amigáveis para cidades não encontradas.
 - Design responsivo e agradável.
 
@@ -25,13 +23,11 @@ Este projeto é uma aplicação web para consulta de previsão do tempo em qualq
 
 ## Description (English)
 
-This project is a web application for checking the weather forecast in any city worldwide. Users can search by city name and view current weather data, hourly forecasts, and daily forecasts, all displayed in interactive and responsive cards. The interface is modern, intuitive, and optimized for mobile devices.
+This project is a web application for checking the weather forecast in any city worldwide. Users can search by city name and view current weather data. The interface is modern, intuitive, and optimized for mobile devices.
 
 ### Features
 - Search for cities to check the weather.
 - Display of current weather data (temperature, feels like, weather description, icon).
-- Detailed hourly forecast.
-- Daily forecast for the next days.
 - Friendly error messages for cities not found.
 - Responsive and pleasant design.
 

@@ -10,7 +10,9 @@ import { IoIosSearch } from "react-icons/io";
 const CitySearchBar = ({ onCitySubmit }) => {
   const [search, setSearch] = useState("");
 
-  const handleCity = () => {
+  const handleCity = (event) => {
+    event.preventDefault();
+
     if (onCitySubmit && search) {
       onCitySubmit(search);
       setSearch("");
@@ -18,7 +20,7 @@ const CitySearchBar = ({ onCitySubmit }) => {
   };
 
   return (
-    <div className="searchForm">
+    <form className="searchForm" onSubmit={handleCity}>
       <input
         className="searchInput"
         type="text"
@@ -26,10 +28,10 @@ const CitySearchBar = ({ onCitySubmit }) => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <button className="searchButton">
+      <button className="searchButton" type="submit">
         <IoIosSearch className="searchIcon" onClick={handleCity} />
       </button>
-    </div>
+    </form>
   );
 };
 

@@ -7,5 +7,9 @@
         font-weight: 700;
         letter-spacing: -0.025em;
         list-style: 1.25;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
     }
 }
