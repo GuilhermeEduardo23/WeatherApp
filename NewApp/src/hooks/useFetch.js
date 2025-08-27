@@ -14,7 +14,7 @@ const useCurrentWeatherData = (city) => {
 
     axios
       .get("http://localhost:3001/api/dados", { params: { city } }) // Envia o parâmetro city para o server.js
-      .then((response) => setData(response.data))
+      .then((response) => console.log(response.data))
       .catch((error) => setError(`Erro ao buscar dados do servidor: ${error}`))
       .finally(() => setLoading(false));
   }, [city]);

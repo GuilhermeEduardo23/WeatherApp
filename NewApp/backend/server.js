@@ -13,7 +13,7 @@ app.get("/api/dados", async (req, res) => {
   if (!city) return res.status(400).json({ error: "Cidade não informada!" });
 
   try {
-    const response = await axios.get(
+    const responseCurrentWeatherData = await axios.get(
       `https://api.openweathermap.org/data/2.5/weather`,
       {
         params: {
@@ -25,7 +25,22 @@ app.get("/api/dados", async (req, res) => {
       }
     );
 
-    res.json(response.data);
+    const responseFiveDaysWeatherData = await axios.get(
+      `https://api.openweathermap.org/data/2.5/forecast`,
+      {
+        params: {
+          q: city,
+          appid: process.env.API_KEY,
+          lang: "pt",
+          units: "metric",
+        },
+      }
+    );
+
+    res.json({
+        current: responseCurrentWeatherData.data,
+        fiveDays: responseFiveDaysWeatherData.data,
+    });
   } catch (error) {
     res.status(500).json({ error: `Erro interno do servidor: ${error}` });
   }
