@@ -8,13 +8,13 @@ import Header from "./components/Header/Header";
 import HourlyForecast from "./components/HourlyForecast/HourlyForecast";
 import DailyForecast from "./components/DailyForecast/DailyForecast";
 import { useState } from "react";
-import useCurrentWeatherData from "./hooks/useFetch";
+import useFetch from "./hooks/useFetch";
 import ModalError from "./components/ModalError/ModalError";
 import { OrbitProgress } from "react-loading-indicators";
 
 function App() {
   const [city, setCity] = useState("");
-  const { data, loading, error } = useCurrentWeatherData(city);
+  const { data, loading, error } = useFetch(city);
 
   return (
     <div className="app">
@@ -32,8 +32,8 @@ function App() {
       {data && (
         <div>
           <WeatherCard weather={data} />
-          {/*<HourlyForecast weather={data} />
-          <DailyForecast weather={data} />*/}
+          <DailyForecast weather={data} />
+          {/*<HourlyForecast weather={data} />*/}
         </div>
       )}
     </div>

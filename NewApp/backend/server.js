@@ -7,7 +7,7 @@ const PORT = process.env.PORT;
 
 app.use(cors());
 
-app.get("/api/dados", async (req, res) => {
+app.get("/api/dados", async (req, res) => { // req: recebe o valor da variável de fora que envia, res: envia a resposta
   const { city } = req.query; // recebe o parâmetro da querystring
 
   if (!city) return res.status(400).json({ error: "Cidade não informada!" });
