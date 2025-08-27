@@ -5,28 +5,18 @@ const useCurrentWeatherData = (city) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const myKeyApi = "faf304ef7610279db0789696dbc57421";
 
   useEffect(() => {
     if (!city) return;
-    setError("");
+    setError(false);
     setData(null);
     setLoading(true);
 
-    async function fetchData() {
-      try {
-        const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${myKeyApi}&lang=pt&units=metric`
-        );
-        setData(response.data);
-      } catch {
-        setError(`Não foi possível encontrar a cidade informada.`);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchData();
+    axios
+      .get("http://localhost:3001/api/dados", { params: { city } }) // Envia o parâmetro city para o server.js
+      .then((response) => setData(response.data))
+      .catch((error) => setError(`Erro ao buscar dados do servidor: ${error}`))
+      .finally(() => setLoading(false));
   }, [city]);
 
   return { data, loading, error };
