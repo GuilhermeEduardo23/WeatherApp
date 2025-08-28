@@ -5,7 +5,6 @@ import "./App.scss";
 import CitySearchBar from "./components/SearchBar/CitySearchBar";
 import WeatherCard from "./components/WeatherCard/WeatherCard";
 import Header from "./components/Header/Header";
-import HourlyForecast from "./components/HourlyForecast/HourlyForecast";
 import DailyForecast from "./components/DailyForecast/DailyForecast";
 import { useState } from "react";
 import useFetch from "./hooks/useFetch";
@@ -30,11 +29,10 @@ function App() {
       )}
 
       {data && (
-        <div>
+        <>
           <WeatherCard weather={data} />
           <DailyForecast weather={data} />
-          {/*<HourlyForecast weather={data} />*/}
-        </div>
+        </>
       )}
     </div>
   );
