@@ -7,7 +7,10 @@ const PORT = process.env.PORT;
 
 app.use(cors());
 
-app.get("/api/dados", async (req, res) => { // req: recebe o valor da variável de fora que envia, res: envia a resposta
+app.get("/", async (res) => res.send("Servidor executando com sucesso!"));
+
+app.get("/api/dados", async (req, res) => {
+  // req: recebe o valor da variável de fora que envia, res: envia a resposta
   const { city } = req.query; // recebe o parâmetro da querystring
 
   if (!city) return res.status(400).json({ error: "Cidade não informada!" });
@@ -38,11 +41,9 @@ app.get("/api/dados", async (req, res) => { // req: recebe o valor da variável 
     );
 
     res.json({
-        current: responseCurrentWeatherData.data,
-        fiveDays: responseFiveDaysWeatherData.data,
+      current: responseCurrentWeatherData.data,
+      fiveDays: responseFiveDaysWeatherData.data,
     });
-
-    res.send("Olá, aqui é o servidor executando!");
   } catch (error) {
     res.status(500).json({ error: `Erro interno do servidor: ${error}` });
   }
