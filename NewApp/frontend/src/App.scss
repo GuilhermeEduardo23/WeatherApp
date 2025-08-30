@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0f172a;
+  min-height: 100vh;
+  padding: 15px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.app {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  color: #f8fafc;
+}
+
+.loading {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
