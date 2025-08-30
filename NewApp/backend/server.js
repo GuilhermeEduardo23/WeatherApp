@@ -40,8 +40,9 @@ app.get("/api/dados", async (req, res) => { // req: recebe o valor da variável 
     res.json({
         current: responseCurrentWeatherData.data,
         fiveDays: responseFiveDaysWeatherData.data,
-        "Olá, aqui é o server rodando"
     });
+
+    res.send("Olá, aqui é o servidor executando!");
   } catch (error) {
     res.status(500).json({ error: `Erro interno do servidor: ${error}` });
   }
