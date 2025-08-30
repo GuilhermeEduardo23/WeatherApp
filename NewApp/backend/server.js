@@ -5,7 +5,10 @@ const app = express();
 const axios = require("axios");
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: "https://new-app-my-weather.vercel.app/",
+  credentials: true
+}));
 
 app.get("/", (req, res) => {
   res.send({message: "Servidor funcionando!"});
