@@ -5,10 +5,7 @@ const app = express();
 const axios = require("axios");
 const PORT = process.env.PORT || 3000;
 
-app.use(cors({
-  origin: "https://weather-app-six-sage-69.vercel.app/",
-  credentials: true
-}));
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send({message: "Servidor funcionando!"});
