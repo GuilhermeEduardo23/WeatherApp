@@ -3,11 +3,16 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 const axios = require("axios");
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: "https://weather-app-six-sage-69.vercel.app/",
+  credentials: true
+}));
 
-app.get("/", async (res) => res.send("Servidor executando com sucesso!"));
+app.get("/", (req, res) => {
+  res.send({message: "Servidor funcionando!"});
+})
 
 app.get("/api/dados", async (req, res) => {
   // req: recebe o valor da variável de fora que envia, res: envia a resposta
