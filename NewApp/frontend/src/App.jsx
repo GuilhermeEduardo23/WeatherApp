@@ -34,6 +34,19 @@ function App() {
           <DailyForecast weather={data} />
         </>
       )}
+
+      <footer className="footer">
+        <span className="footer-text">
+          Data provided by
+          <a href="https://openweathermap.org/" target="_blank">
+            <img
+              className="openweather-logo"
+              src="https://vectorseek.com/wp-content/uploads/2023/10/OpenWeather-Logo-Vector.svg-.png"
+              alt="Logo OpenWeather"
+            />
+          </a>
+        </span>
+      </footer>
     </div>
   );
 }

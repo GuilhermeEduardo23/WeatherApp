@@ -13,11 +13,8 @@ const PORT = process.env.PORT || 3000;
   })
 );*/
 
-<<<<<<< HEAD
-=======
 app.use(cors());
 
->>>>>>> 06e618cf786fa3a4ed1e448c15241f273691ac71
 // Response to inform that the backend server is working
 app.get("/", (req, res) => {
   res.send({ message: "Server running!" });

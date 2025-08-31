@@ -6,7 +6,7 @@ Este projeto é uma aplicação web para consulta de previsão do tempo em qualq
 
 ### Funcionalidades
 - Busca de cidades para consulta do clima.
-- Exibição dos dados meteorológicos atuais (temperatura, sensação térmica, descrição do tempo, ícone        indicativo do tempo atual).
+- Exibição dos dados meteorológicos atuais (temperatura, sensação térmica, descrição do tempo, ícone indicativo do tempo atual).
 - Mensagens de erro amigáveis para cidades não encontradas.
 - Design responsivo e agradável.
 
@@ -18,6 +18,13 @@ Este projeto é uma aplicação web para consulta de previsão do tempo em qualq
 - [Sass](https://sass-lang.com/) para estilização avançada.
 - [React Icons](https://react-icons.github.io/react-icons/) para ícones.
 - [React Loading Indicators](https://www.npmjs.com/package/react-loading-indicators) para animações de carregamento.
+- [Express.js](https://expressjs.com/) para construção de servidor backend e controle de requisição de APIs do cliente.
+
+### Futuras Funcionalidades
+1. Adição de busca automática de cidade ao digitar no campo de pesquisa.
+2. Botão de alternância entre modo claro e escuro.
+3. Botão de alternância entre os idioma Português e Inglês.
+4. Adição de um novo card de informações detalhadas por hora, abaixo do card principal.
 
 ---
 
@@ -38,4 +45,19 @@ This project is a web application for checking the weather forecast in any city 
 - [OpenWeather API](https://openweathermap.org/api) for weather data.
 - [Sass](https://sass-lang.com/) for advanced styling.
 - [React Icons](https://react-icons.github.io/react-icons/) for icons.
-- [React Loading Indicators](https://www.npmjs.com/package/react-loading-indicators) for loading
+- [React Loading Indicators](https://www.npmjs.com/package/react-loading-indicators) for loading.
+- [Express.js](https://expressjs.com/) for building backend servers and controlling client API requests.
+
+### Future Features
+1. Addition of automatic city search when typing in the search field.
+2. Button to switch between light and dark mode.
+3. Button to switch between Portuguese and English languages.
+4. Addition of a new card with detailed information per hour, below the main card.
+
+---
+
+## Capturas de Tela / Screenshots
+
+![Main Screen](image.png)
+
+![Weather Data](image-1.png)
