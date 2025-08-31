@@ -5,23 +5,26 @@ const app = express();
 const axios = require("axios");
 const PORT = process.env.PORT || 3000;
 
-app.use(
+/*app.use(
   cors({
     origin: ["https://new-app-my-weather.vercel.app", "http://localhost:5173"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
-);
+);*/
 
+app.use(cors());
+
+// Response to inform that the backend server is working
 app.get("/", (req, res) => {
-  res.send({ message: "Servidor funcionando!" });
+  res.send({ message: "Server running!" });
 });
 
 app.get("/api/dados", async (req, res) => {
-  // req: recebe o valor da variável de fora que envia, res: envia a resposta
-  const { city } = req.query; // recebe o parâmetro da querystring
+  // req: receives the value of the variable sent from outside, res: sends the response
+  const { city } = req.query; // receives the query string parameter
 
-  if (!city) return res.status(400).json({ error: "Cidade não informada!" });
+  if (!city) return res.status(400).json({ error: "City not specified!" });
 
   try {
     const responseCurrentWeatherData = await axios.get(
@@ -53,10 +56,10 @@ app.get("/api/dados", async (req, res) => {
       fiveDays: responseFiveDaysWeatherData.data,
     });
   } catch (error) {
-    res.status(500).json({ error: `Erro interno do servidor: ${error}` });
+    res.status(500).json({ error: `Internal Server Error: ${error}` });
   }
 });
 
 app.listen(PORT, () => {
-  console.log(`Servidor rodando em: http://localhost:${PORT}`);
+  console.log(`Server running on: http://localhost:${PORT}`);
 });
