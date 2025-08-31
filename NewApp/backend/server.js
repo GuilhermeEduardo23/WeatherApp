@@ -5,14 +5,28 @@ const app = express();
 const axios = require("axios");
 const PORT = process.env.PORT || 3000;
 
-app.use(cors({
-  origin: "https://new-app-my-weather.vercel.app/",
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: "https://new-app-my-weather.vercel.app/",
+    credentials: true,
+  })
+);
+
+app.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://new-app-my-weather.vercel.app/"
+  );
+  res.header(
+    "Access-Control-Allow-Origin",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
 app.get("/", (req, res) => {
-  res.send({message: "Servidor funcionando!"});
-})
+  res.send({ message: "Servidor funcionando!" });
+});
 
 app.get("/api/dados", async (req, res) => {
   // req: recebe o valor da variável de fora que envia, res: envia a resposta
