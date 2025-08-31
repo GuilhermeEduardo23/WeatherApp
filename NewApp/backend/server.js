@@ -8,21 +8,11 @@ const PORT = process.env.PORT || 3000;
 app.use(
   cors({
     origin: "https://new-app-my-weather.vercel.app/",
+    methods: ["GET"],
+    allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"],
     credentials: true,
   })
 );
-
-app.use((req, res, next) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://new-app-my-weather.vercel.app/"
-  );
-  res.header(
-    "Access-Control-Allow-Origin",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
 
 app.get("/", (req, res) => {
   res.send({ message: "Servidor funcionando!" });
