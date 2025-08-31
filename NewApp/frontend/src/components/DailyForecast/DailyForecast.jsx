@@ -30,7 +30,11 @@ const DailyForecast = ({ weather }) => {
               <span className="dayName">{convertDate(forecast)}</span>
 
               <img
-                src={`https://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`}
+                src={`https://openweathermap.org/img/wn/${
+                  forecast.weather[0].icon === "01n"
+                    ? "01d"
+                    : forecast.weather[0].icon
+                }.png`}
                 alt={forecast.weather[0].description}
               />
 

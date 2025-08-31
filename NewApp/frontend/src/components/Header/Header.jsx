@@ -5,10 +5,7 @@ const Header = () => {
     <header className="header">
       <h1 className="title">
         Meu Tempo
-        <img
-          src="https://img.icons8.com/?size=50&id=TquwKm18epOW&format=png&color=000000"
-          alt="Ícone de sol entre nuvens"
-        />
+        <img width="94" height="94" src="https://img.icons8.com/3d-fluency/94/partly-cloudy-day.png" alt="partly-cloudy-day"/>
       </h1>
     </header>
   );
