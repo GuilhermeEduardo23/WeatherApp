@@ -7,9 +7,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(
   cors({
-    origin: "https://new-app-my-weather.vercel.app/",
-    methods: ["GET"],
-    allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"],
+    origin: ["https://new-app-my-weather.vercel.app", "http://localhost:5173"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
