@@ -5,15 +5,13 @@ const app = express();
 const axios = require("axios");
 const PORT = process.env.PORT || 3000;
 
-/*app.use(
+app.use(
   cors({
     origin: ["https://new-app-my-weather.vercel.app", "http://localhost:5173"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
-);*/
-
-app.use(cors());
+);
 
 // Response to inform that the backend server is working
 app.get("/", (req, res) => {
