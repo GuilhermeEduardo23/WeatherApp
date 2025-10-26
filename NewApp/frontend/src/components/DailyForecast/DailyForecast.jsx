@@ -1,6 +1,6 @@
 import "./DailyForecast.scss";
 
-const DailyForecast = ({ weather }) => {
+const DailyForecast = ({ weather, darkMode }) => {
   let dailyForecast = {};
 
   for (let forecast of weather.fiveDays.list) {
@@ -21,13 +21,13 @@ const DailyForecast = ({ weather }) => {
   };
 
   return (
-    <div className="dailyForecast">
+    <div className="daily-forecast">
       <h3 className="title">Próximos Dias</h3>
       {fiveDayForecast.map((forecast) => (
         <div key={forecast.dt}>
-          <div className="daysList">
-            <div className="dayCard">
-              <span className="dayName">{convertDate(forecast)}</span>
+          <div className="days-list">
+            <div className={`day-card ${darkMode ? "day-card-dark" : "day-card-light"}  `}>
+              <span className="day-name">{convertDate(forecast)}</span>
 
               <img
                 src={`https://openweathermap.org/img/wn/${
@@ -39,11 +39,11 @@ const DailyForecast = ({ weather }) => {
               />
 
               <div className="temperatures">
-                <span className="minTemp">
+                <span className="min-temp">
                   Min: {Math.round(forecast.main.temp_min)}ºC
                 </span>{" "}
                 /
-                <span className="maxTemp">
+                <span className="max-temp">
                   Max: {Math.round(forecast.main.temp_max)}ºC
                 </span>
               </div>

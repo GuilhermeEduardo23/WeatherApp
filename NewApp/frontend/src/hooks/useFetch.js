@@ -13,7 +13,7 @@ const useFetch = (city) => {
     setLoading(true);
 
     axios
-      .get("https://weatherapp-vq3m.onrender.com/api/dados", {
+      .get("http://localhost:3001/api/dados", {
         params: { city },
       }) // Envia o parâmetro city para o server.js
       .then((response) => setData(response.data))

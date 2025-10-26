@@ -20,16 +20,16 @@ const CitySearchBar = ({ onCitySubmit }) => {
   };
 
   return (
-    <form className="searchForm" onSubmit={handleCity}>
+    <form className="search-form" onSubmit={handleCity}>
       <input
-        className="searchInput"
+        className="search-input"
         type="text"
         placeholder="Buscar cidade..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <button className="searchButton" type="submit">
-        <IoIosSearch className="searchIcon" onClick={handleCity} />
+      <button className="search-button" type="submit">
+        <IoIosSearch className="search-icon" onClick={handleCity} />
       </button>
     </form>
   );
