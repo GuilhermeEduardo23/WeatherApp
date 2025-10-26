@@ -16,7 +16,12 @@ const Header = ({ darkMode, onToggleTheme }) => {
         />
       </h1>
       <button className="theme-toggle" onClick={onToggleTheme}>
-        {darkMode ? <IoSunnyOutline className="icon"/> : <IoMoon className="icon"/>}
+        <IoSunnyOutline
+          className={`icon ${darkMode ? "visible" : "hidden"}`}
+        />
+        <IoMoon
+          className={`icon ${darkMode ? "hidden" : "visible"}`}
+        />
       </button>
     </header>
   );
