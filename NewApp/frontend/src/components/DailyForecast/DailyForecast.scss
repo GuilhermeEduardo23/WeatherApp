@@ -1,0 +1,81 @@
+.daily-forecast {
+    background: var(--bg-secondary);
+    border-radius: 24px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .title {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-primary) !important;
+        margin-bottom: 16px;
+        padding: 0 8px;
+        text-align: center;
+    }
+
+    .days-list {
+        display: flex;
+        flex-direction: column;
+
+        .day-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            border-radius: 16px;
+            transition: 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            .day-name {
+                font-size: 16px;
+                font-weight: 500;
+                color: var(--text-primary);
+                min-width: 64px;
+            }
+
+            .temperatures {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                .min-temp {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: var(--text-secondary);
+                }
+
+                .max-temp {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: var(--text-primary);
+                    min-width: 40px;
+                    text-align: right;
+                }
+            }
+        }
+
+        .day-card-dark {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .day-card-light {
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            backdrop-filter: blur(10px);
+
+            &:hover {
+                background: rgba(59, 130, 246, 0.08);
+                box-shadow: 0 10px 20px rgba(59, 130, 246, 0.15);
+            }
+        }
+    }
+}

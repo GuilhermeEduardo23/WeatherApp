@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  /* Dark theme variables (default) */
+  --primary-color: #6366f1;
+  --secondary-color: #4f46e5;
+  --accent-color: #ec4899;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-card: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --gradient-bg: linear-gradient(135deg, #6366f1, #8b5cf6);
+  --gradient-card: linear-gradient(135deg, #1e293b, #334155);
+}
+
+body {
+  min-height: 100vh;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+/* Light theme variables */
+.light-theme {
+  --bg-primary: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #fef3c7 100%);
+  --bg-secondary: rgba(255, 255, 255, 0.8);
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --gradient-bg: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+}
+
+.app {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  color: var(--text-primary);
+}
+
+.loading {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  position: static;
+  margin-top: 40px;
+  padding: 10px 0;
+  z-index: 100;
+
+  .footer-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 16px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .openweather-logo {
+    height: 30px;
+    cursor: pointer;
+    transition: 0.5s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
